@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "tomydng.wireguard",
   "name": "WireGuard (wg-quick)",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": "tomydng (based on Alan Sanchez's WireGuard Manager)",
   "license": "MIT",
   "description": "A compact Omarchy bar widget for observing and explicitly toggling WireGuard wg-quick connections.",
@@ -14,13 +14,19 @@
     "category": "Network",
     "allowMultiple": false,
     "defaultSection": "right",
-    "defaults": { "wg0Label": "Home VPN" },
+    "defaults": { "wg0Label": "Home VPN", "iconPath": "" },
     "schema": [
       {
         "key": "wg0Label",
         "type": "string",
         "label": "Display name for wg0 (does not rename the interface)",
         "defaultValue": "Home VPN"
+      },
+      {
+        "key": "iconPath",
+        "type": "string",
+        "label": "Optional local icon URL (file:///path/to/icon.svg)",
+        "defaultValue": ""
       }
     ]
   }

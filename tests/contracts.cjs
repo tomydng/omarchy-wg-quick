@@ -30,4 +30,10 @@ for (const block of panel.matchAll(/Text\s*\{([\s\S]*?)\n\s*\}/g)) {
 }
 assert.match(bar, /replace\(/); // sanitize configurable label before shared tooltip
 assert.equal(JSON.parse(read('manifest.json')).barWidget.defaults.wg0Label, 'Home VPN');
+assert.equal(JSON.parse(read('manifest.json')).barWidget.defaults.iconPath, '');
+assert.match(bar, /configuredIcon\.startsWith\("file:\/\/\/"\)/);
+assert.match(bar, /readonly property bool hasIcon: icon\.status === Image\.Ready/);
+assert.match(bar, /text: root\.hasIcon \? "" : root\.summary/);
+assert.match(bar, /fillMode: Image\.PreserveAspectFit/);
+assert.match(bar, /visible: root\.hasIcon && button\.active/);
 console.log('PASS: parser, safe argv, shared state, colors, layout and text contracts');

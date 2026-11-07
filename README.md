@@ -63,6 +63,24 @@ omarchy bar set tomydng.wireguard wg0Label 'Home VPN'
 The underlying interface name is always displayed separately. Other profiles
 retain their filenames. R refreshes, arrows select a row, Enter toggles it.
 
+### Optional local icon
+
+The default label is WG. Supply your own locally stored icon to use an image:
+
+```bash
+omarchy bar set tomydng.wireguard iconPath 'file:///absolute/path/to/icon.svg'
+```
+
+Only local `file:///` URLs are accepted; the widget never downloads icons.
+An empty/invalid/unavailable image falls back to WG. The image is dimmed while
+off; an active interface restores full opacity and adds a small accent dot.
+Colors/aspect ratio of the supplied asset are preserved.
+
+This repository includes **no WireGuard logo**. Users must ensure permission
+to use their chosen artwork. “WireGuard” and the “WireGuard” logo are registered
+trademarks of Jason A. Donenfeld; see the [trademark policy](https://www.wireguard.com/trademark-policy/).
+The local icon does not imply endorsement or affiliation.
+
 ### Existing upstream plugin
 
 If switching from the original, disable it first to avoid duplicate buttons:
